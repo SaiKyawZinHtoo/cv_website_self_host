@@ -25,6 +25,7 @@ export interface TechItem {
   category: TechCategoryKey;
   color: string;
   icon: IconType;
+  note?: string;
 }
 
 export const techStackItems: TechItem[] = [
@@ -37,8 +38,8 @@ export const techStackItems: TechItem[] = [
   { name: "Node.js", category: "backend", color: "#339933", icon: SiNodedotjs },
   { name: "NestJS", category: "backend", color: "#E0234E", icon: SiNestjs },
   { name: "PHP", category: "backend", color: "#777BB4", icon: SiPhp },
-  { name: "Docker", category: "devops", color: "#2496ED", icon: SiDocker },
-  { name: "VPS", category: "devops", color: "#8B5CF6", icon: TbServer },
+  { name: "Docker", category: "devops", color: "#2496ED", icon: SiDocker, note: "VPS production" },
+  { name: "VPS", category: "devops", color: "#8B5CF6", icon: TbServer, note: "Z.com hosting" },
   { name: "MongoDB", category: "database", color: "#47A248", icon: SiMongodb },
   { name: "PostgreSQL", category: "database", color: "#4169E1", icon: SiPostgresql },
   { name: "Firebase", category: "database", color: "#FFCA28", icon: SiFirebase },

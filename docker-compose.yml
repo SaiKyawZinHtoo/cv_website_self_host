@@ -1,0 +1,13 @@
+services:
+  cv-website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cv-website
+    restart: unless-stopped
+    ports:
+      - "${APP_PORT:-3000}:3000"
+    environment:
+      NODE_ENV: production
+      HOSTNAME: 0.0.0.0
+      PORT: 3000

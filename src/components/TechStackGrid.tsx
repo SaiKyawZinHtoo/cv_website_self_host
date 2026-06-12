@@ -63,6 +63,9 @@ function TechCard({ tech }: { tech: TechItem }) {
           <p className="truncate font-semibold tracking-tight text-[var(--text-heading)]">
             {tech.name}
           </p>
+          {tech.note && (
+            <p className="mt-0.5 truncate text-[11px] text-[var(--text-muted)]">{tech.note}</p>
+          )}
           <span
             className="mt-1 inline-block rounded-md px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider"
             style={{

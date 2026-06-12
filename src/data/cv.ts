@@ -10,7 +10,7 @@ export const cvData = {
   },
   profile: [
     "An experienced IT professional with a Higher National Diploma (HND) in Computing from GUSTO College, with strong foundations in programming, networking, and cybersecurity. Specialized in Flutter and Dart with a proven track record of building enterprise-ready cross-platform mobile applications. Proficient in HTML, CSS, JavaScript, Java, and C++, with recent hands-on experience in TypeScript, phpMyAdmin, XAMPP, Docker, React, and Next.js.",
-    "Recognized for innovation, refining solutions for better outcomes, and guiding teams — comfortable working independently or collaboratively. Currently advancing toward a Full Stack Developer role, delivering integrated solutions across mobile, web, and server. Continuously growing through AI-assisted development with GitHub Copilot, Cursor AI, Figma, and Google Stitch to build higher-quality products faster.",
+    "Recognized for innovation, refining solutions for better outcomes, and guiding teams — comfortable working independently or collaboratively. Currently advancing toward a Full Stack Developer role, delivering integrated solutions across mobile, web, and server. Experienced in containerizing and running production backends on VPS with Docker. Continuously growing through AI-assisted development with GitHub Copilot, Cursor AI, Figma, and Google Stitch to build higher-quality products faster.",
   ],
   education: [
     {
@@ -74,6 +74,7 @@ export const cvData = {
     "Problem solving",
     "Time Management",
     "Continuous Learning (Prompt Engineering)",
+    "Docker & VPS Deployment (containerized production)",
     "Communication & IT Lecturing",
     "Team Player (Cursor AI, Copilot, Z.com VPS, Docker)",
   ],
@@ -164,9 +165,11 @@ export const cvData = {
       company: "Online POS & SMT Projects — Solo Developer",
       highlights: [
         "Sole developer with full end-to-end ownership from start through ongoing development.",
-        "Online POS: Flutter mobile + JavaScript/Node.js backend; XAMPP migrated to Docker.",
+        "Online POS: Flutter mobile + JavaScript/Node.js backend; XAMPP migrated to Docker containerized APIs.",
+        "Run production workloads on VPS using Docker for Online POS and SMT services.",
+        "Configured Docker-based deployment on Z.com VPS for stable internal production.",
         "Google Drive backup integration and 2/3/4-inch thermal printer support.",
-        "SMT Project: Flutter + PHP database; deployed on VPS (internal, not public yet).",
+        "SMT Project: Flutter + PHP backend containerized with Docker and running on VPS (internal, not public yet).",
         "Leveraged GitHub Copilot and Cursor AI for workflow and UI/UX optimization.",
       ],
     },

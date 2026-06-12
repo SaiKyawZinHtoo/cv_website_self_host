@@ -61,7 +61,7 @@ export const my: Translations = {
     },
     profile: [
       "GUSTO College မှ Higher National Diploma (HND) in Computing ဘွဲ့ရရှိထားသော အတွေ့အကြုံရင့် IT ပညာရှင်တစ်ဦးဖြစ်ပြီး programming၊ networking နှင့် cybersecurity ကျွမ်းကျင်မှုများ ခိုင်မာစွာရှိပါသည်။ Flutter နှင့် Dart တွင် အထူးကျွမ်းကျင်ပြီး enterprise-ready cross-platform mobile applications များကို အောင်မြင်စွာ တည်ဆောက်ဖော်ဆောင်ခဲ့သော အတွေ့အကြုံရှိပါသည်။ HTML၊ CSS၊ JavaScript၊ Java၊ C++ တို့တွင် လုပ်ဆောင်နိုင်ပြီး TypeScript၊ phpMyAdmin၊ XAMPP၊ Docker၊ React နှင့် Next.js များတွင်လည်း လတ်တလော အတွေ့အကြုံရှိပါသည်။",
-      "ဆန်းသစ်တီထွင်နိုင်မှု၊ ဖြေရှင်းချက်များကို ပိုမိုကောင်းမွန်အောင် ပြင်ဆင်နိုင်မှုနှင့် အဖွဲ့များကို လမ်းညွှန်နိုင်မှုအတွက် အသိအမှတ်ပြုခံရပြီး လွတ်လပ်စွာ သို့မဟုတ် အဖွဲ့အဖြစ် လုပ်ဆောင်နိုင်ပါသည်။ လက်ရှိတွင် Full Stack Developer ရာထူးသို့ ရောက်ရှိရန် လုပ်ဆောင်နေပြီး mobile၊ web နှင့် server တစ်ခုလုံးအတွက် ပေါင်းစပ်ဖြေရှင်းချက်များ ပေးဆောင်နေပါသည်။ GitHub Copilot၊ Cursor AI၊ Figma နှင့် Google Stitch ကဲ့သို့သော AI ကိရိယာများကို နေ့စဉ် development workflow ထဲသို့ ထည့်သွင်းအသုံးပြုကာ ပိုမိုမြန်ဆန်ပြီး အရည်အသွေးမြင့် product များ တည်ဆောက်နိုင်ရန် ဆက်လက်တိုးတက်လာပါသည်။",
+      "ဆန်းသစ်တီထွင်နိုင်မှု၊ ဖြေရှင်းချက်များကို ပိုမိုကောင်းမွန်အောင် ပြင်ဆင်နိုင်မှုနှင့် အဖွဲ့များကို လမ်းညွှန်နိုင်မှုအတွက် အသိအမှတ်ပြုခံရပြီး လွတ်လပ်စွာ သို့မဟုတ် အဖွဲ့အဖြစ် လုပ်ဆောင်နိုင်ပါသည်။ လက်ရှိတွင် Full Stack Developer ရာထူးသို့ ရောက်ရှိရန် လုပ်ဆောင်နေပြီး mobile၊ web နှင့် server တစ်ခုလုံးအတွက် ပေါင်းစပ်ဖြေရှင်းချက်များ ပေးဆောင်နေပါသည်။ Docker ဖြင့် backend services များကို containerize လုပ်ပြီး VPS ပေါ်တွင် production အဖြစ် run ထားသော အတွေ့အကြုံရှိပါသည်။ GitHub Copilot၊ Cursor AI၊ Figma နှင့် Google Stitch ကဲ့သို့သော AI ကိရိယာများကို နေ့စဉ် development workflow ထဲသို့ ထည့်သွင်းအသုံးပြုကာ ပိုမိုမြန်ဆန်ပြီး အရည်အသွေးမြင့် product များ တည်ဆောက်နိုင်ရန် ဆက်လက်တိုးတက်လာပါသည်။",
     ],
     education: [
       {
@@ -120,6 +120,7 @@ export const my: Translations = {
       "အချိန်စီမံခန့်ခွဲမှု",
       "အဆက်မပြတ် သင်ယူမှု (Prompt Engineering)",
       "AI ဖြင့် ကူညီဖွံ့ဖြိုးတိုးတက်မှု (Copilot, Cursor, Figma, Stitch)",
+      "Docker & VPS Deployment (containerized production)",
       "ဆက်သွယ်ရေးနှင့် IT ဟောပြောခြင်း",
       "အဖွဲ့လိုက်လုပ်ဆောင်နိုင်မှု (Cursor AI, Copilot, Z.com VPS, Docker)",
     ],
@@ -259,11 +260,13 @@ export const my: Translations = {
         highlights: [
           "စတင်ကတည်းက အစအဆုံး တာဝန်ယူခဲ့သော solo developer အဖြစ် လက်ရှိထိ ဆက်လက်ဖွံ့ဖြိုးတိုးတက်မှု လုပ်ဆောင်နေဆဲ။",
           "Online POS: Flutter (iOS & Android) mobile frontend နှင့် JavaScript/Node.js backend APIs တည်ဆောက်ခဲ့သည်။",
-          "Server ကို အစတွင် XAMPP ဖြင့် စတင်ခဲ့ပြီး နောက်ပိုင်းတွင် scalability နှင့် reliability တိုးတက်စေရန် Docker သို့ ပြောင်းရွှေ့ခဲ့သည်။",
+          "Server ကို အစတွင် XAMPP ဖြင့် စတင်ခဲ့ပြီး နောက်ပိုင်းတွင် Node.js API များကို Docker ဖြင့် containerize လုပ်ကာ scalability နှင့် reliability တိုးတက်စေရန် ပြောင်းရွှေ့ခဲ့သည်။",
+          "Online POS နှင့် SMT ပရောဂျက်များအတွက် Docker ဖြင့် containerize လုပ်ထားသော production services များကို VPS ပေါ်တွင် run ထားပြီး စီမံခန့်ခွဲနေပါသည်။",
+          "Z.com VPS ပေါ်တွင် Docker-based deployment ကို configure လုပ်ပြီး internal production အတွက် တည်ငြိမ်စွာ update နှင့် maintenance လုပ်ဆောင်နေပါသည်။",
           "Google Drive backup ချိတ်ဆက်ပြီး ဒေတာကို လုံခြုံစွာ backup လုပ်နိုင်အောင် လုပ်ဆောင်ခဲ့သည်။",
           "Thermal printer အတွက် ၂ လက်မ၊ ၃ လက်မ နှင့် ၄ လက်မ receipt format များ ပံ့ပိုးပေးခဲ့သည်။",
-          "SMT Project: တူညီသော full-stack နည်းလမ်းဖြင့် — Flutter mobile frontend နှင့် PHP database backend တည်ဆောက်ခဲ့သည်။",
-          "SMT ကို လက်ရှိ VPS ပေါ်တွင် တင်ထားပြီး အတွင်းပိုင်း အသုံးပြုရန်သာ — public ထုတ်ဝေခြင်း မရှိသေးပါ။",
+          "SMT Project: တူညီသော full-stack နည်းလမ်းဖြင့် — Flutter mobile frontend နှင့် PHP database backend ကို Docker ဖြင့် containerize လုပ်ပြီး VPS ပေါ်တွင် run ထားသည်။",
+          "SMT ကို လက်ရှိ VPS ပေါ်တွင် Docker ဖြင့် deploy လုပ်ထားပြီး အတွင်းပိုင်း အသုံးပြုရန်သာ — public ထုတ်ဝေခြင်း မရှိသေးပါ။",
           "Solo developer အဖြစ် Flutter frontend နှင့် Node.js/PHP backend နှစ်ခုလုံးတွင် Cursor AI ကို အသုံးပြုကာ AI-assisted full-stack delivery တွင် ကျွမ်းကျင်လာခဲ့သည်။",
           "Mobile screens၊ flows နှင့် component structure များတွင် Cursor AI ဖြင့် premium UI/UX ကို ပိုမိုကောင်းမွန်အောင် ပြင်ဆင်ခဲ့သည်။",
           "Figma တွင် interface များကို ဒီဇိုင်းရေးဆွဲပြီး Google Stitch ဖြင့် AI-assisted UI exploration နှင့် rapid prototyping လုပ်ဆောင်ခဲ့သည်။",
