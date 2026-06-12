@@ -16,10 +16,10 @@ export default function Home() {
       <Background />
       <SettingsBar />
 
-      <div className="relative mx-auto flex w-full max-w-7xl gap-6 px-4 pt-20 sm:px-6 sm:pt-24 lg:gap-8 lg:px-8">
+      <div className="relative mx-auto flex w-full max-w-7xl gap-6 px-3 pt-16 sm:px-6 sm:pt-24 lg:gap-8 lg:px-8">
         <Navigation />
 
-        <main className="print-cv min-w-0 flex-1 pb-8 sm:pb-12 lg:pb-16">
+        <main className="print-cv min-w-0 flex-1 overflow-x-hidden pb-8 sm:pb-12 lg:pb-16">
           <div className="space-y-6 sm:space-y-8">
             <Hero />
             <ProfileSection />

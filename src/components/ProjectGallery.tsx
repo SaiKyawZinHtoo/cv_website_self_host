@@ -1,12 +1,11 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import Image from "next/image";
 import { ChevronLeft, ChevronRight, Images, X } from "lucide-react";
 import type { ProjectImage } from "@/i18n/types";
 import { useApp } from "@/context/AppProvider";
-import { useMounted } from "@/hooks/useMounted";
 import { SafeIcon } from "./SafeIcon";
+import { ModalImage } from "./ModalImage";
 
 interface ProjectGalleryProps {
   images: ProjectImage[];
@@ -14,7 +13,6 @@ interface ProjectGalleryProps {
 
 export function ProjectGallery({ images }: ProjectGalleryProps) {
   const { t } = useApp();
-  const mounted = useMounted();
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const close = useCallback(() => setActiveIndex(null), []);
@@ -46,8 +44,8 @@ export function ProjectGallery({ images }: ProjectGalleryProps) {
 
   return (
     <>
-      <div className="mt-5 border-t border-[var(--border)] pt-5">
-        <div className="mb-3 flex items-center gap-2">
+      <div className="mt-5 border-t border-[var(--border)] pt-5 print:break-inside-avoid">
+        <div className="mb-3 flex flex-wrap items-center gap-2">
           <SafeIcon icon={Images} className="h-4 w-4 text-[var(--accent)]" />
           <h4 className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">
             {t.ui.projectGallery}
@@ -57,28 +55,23 @@ export function ProjectGallery({ images }: ProjectGalleryProps) {
           </span>
         </div>
 
-        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 md:grid-cols-4">
           {images.map((image, index) => (
             <button
               key={image.url}
               type="button"
               onClick={() => setActiveIndex(index)}
-              className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--chip-bg)] transition-all hover:border-[var(--accent-ring)] hover:shadow-lg"
+              className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--chip-bg)] transition-all hover:border-[var(--accent-ring)] hover:shadow-lg print:pointer-events-none"
               aria-label={`${t.ui.viewImage}: ${image.caption}`}
             >
-              {mounted ? (
-                <Image
-                  src={image.url}
-                  alt={image.caption}
-                  fill
-                  sizes="(max-width: 640px) 50vw, 25vw"
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  unoptimized
-                />
-              ) : (
-                <div className="h-full w-full animate-pulse bg-[var(--chip-bg)]" />
-              )}
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-2 pt-6">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={image.url}
+                alt={image.caption}
+                loading="lazy"
+                className="print-image absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-2 pt-6 print:hidden">
                 <p className="line-clamp-2 text-left text-[10px] font-medium leading-tight text-white">
                   {image.caption}
                 </p>
@@ -90,25 +83,25 @@ export function ProjectGallery({ images }: ProjectGalleryProps) {
 
       {active && activeIndex !== null && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6"
+          className="fixed inset-0 z-[100] flex items-end justify-center sm:items-center sm:p-4 md:p-6 print:hidden"
           role="dialog"
           aria-modal="true"
           aria-label={active.caption}
         >
           <button
             type="button"
-            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/85 backdrop-blur-sm"
             onClick={close}
             aria-label={t.ui.closeViewer}
           />
 
-          <div className="relative flex max-h-[92vh] w-full max-w-5xl flex-col overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-2xl">
+          <div className="relative flex max-h-[95dvh] w-full max-w-5xl flex-col overflow-hidden rounded-t-2xl border border-[var(--border)] bg-[var(--surface)] shadow-2xl sm:max-h-[92vh] sm:rounded-2xl">
             <div className="flex items-center justify-between gap-3 border-b border-[var(--border)] px-4 py-3 sm:px-5">
-              <p className="truncate text-sm font-medium text-[var(--text-heading)]">
+              <p className="min-w-0 flex-1 truncate text-sm font-medium text-[var(--text-heading)]">
                 {active.caption}
               </p>
               <div className="flex shrink-0 items-center gap-1">
-                <span className="mr-2 text-xs text-[var(--text-muted)]">
+                <span className="mr-2 hidden text-xs text-[var(--text-muted)] sm:inline">
                   {activeIndex + 1} / {images.length}
                 </span>
                 <button
@@ -122,36 +115,33 @@ export function ProjectGallery({ images }: ProjectGalleryProps) {
               </div>
             </div>
 
-            <div className="relative flex min-h-0 flex-1 items-center justify-center bg-neutral-950 p-2 sm:p-4">
+            <div className="relative flex min-h-[55dvh] flex-1 flex-col items-center justify-center gap-3 overflow-auto bg-neutral-950 p-3 sm:min-h-[65vh] sm:flex-row sm:gap-0 sm:p-4">
               <button
                 type="button"
                 onClick={goPrev}
-                className="absolute left-2 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black/50 text-white backdrop-blur-sm transition-colors hover:bg-black/70 sm:left-4"
+                className="order-2 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/20 bg-black/50 text-white backdrop-blur-sm transition-colors hover:bg-black/70 sm:order-1 sm:absolute sm:left-4 sm:z-10"
                 aria-label={t.ui.previousImage}
               >
                 <SafeIcon icon={ChevronLeft} className="h-5 w-5" />
               </button>
 
-              <div className="relative h-full max-h-[70vh] w-full">
-                <Image
-                  src={active.url}
-                  alt={active.caption}
-                  width={1400}
-                  height={1000}
-                  className="mx-auto h-full max-h-[70vh] w-auto object-contain"
-                  unoptimized
-                />
+              <div className="order-1 flex min-h-0 flex-1 items-center justify-center sm:order-2">
+                <ModalImage src={active.url} alt={active.caption} />
               </div>
 
               <button
                 type="button"
                 onClick={goNext}
-                className="absolute right-2 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black/50 text-white backdrop-blur-sm transition-colors hover:bg-black/70 sm:right-4"
+                className="order-3 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/20 bg-black/50 text-white backdrop-blur-sm transition-colors hover:bg-black/70 sm:absolute sm:right-4 sm:z-10"
                 aria-label={t.ui.nextImage}
               >
                 <SafeIcon icon={ChevronRight} className="h-5 w-5" />
               </button>
             </div>
+
+            <p className="border-t border-[var(--border)] px-4 py-2 text-center text-xs text-[var(--text-muted)] sm:hidden">
+              {activeIndex + 1} / {images.length}
+            </p>
           </div>
         </div>
       )}

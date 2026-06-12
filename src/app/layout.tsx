@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, Inter, Noto_Sans_Myanmar } from "next/font/google";
 import { AppProvider } from "@/context/AppProvider";
 import { ThemeScript } from "@/components/ThemeScript";
@@ -20,6 +20,12 @@ const notoSansMyanmar = Noto_Sans_Myanmar({
   subsets: ["myanmar"],
   weight: ["400", "500", "600", "700"],
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
 
 export const metadata: Metadata = {
   title: "Sai Kyaw Zin Htoo — Senior Flutter Developer",
@@ -56,7 +62,7 @@ export default function RootLayout({
       <head>
         <ThemeScript />
       </head>
-      <body className="min-h-full" suppressHydrationWarning>
+      <body className="min-h-full overflow-x-hidden" suppressHydrationWarning>
         <AppProvider>{children}</AppProvider>
       </body>
     </html>

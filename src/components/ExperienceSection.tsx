@@ -25,7 +25,7 @@ export function ExperienceSection() {
           >
             <div className="absolute -left-px top-6 h-[calc(100%-3rem)] w-0.5 rounded-full bg-gradient-to-b from-[var(--accent)]/60 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
             <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
-              <div>
+              <div className="min-w-0 flex-1">
                 <time className="text-xs font-medium uppercase tracking-wider text-[var(--accent)]">
                   {job.period}
                 </time>
@@ -43,7 +43,7 @@ export function ExperienceSection() {
                   className="flex gap-3 text-sm leading-relaxed text-[var(--text-body)]"
                 >
                   <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[var(--accent)]" />
-                  <span>{highlight}</span>
+                  <span className="min-w-0 flex-1">{highlight}</span>
                 </li>
               ))}
             </ul>
