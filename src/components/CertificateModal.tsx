@@ -5,6 +5,7 @@ import { ExternalLink, X } from "lucide-react";
 import { useApp } from "@/context/AppProvider";
 import { SafeIcon } from "./SafeIcon";
 import { ModalImage } from "./ModalImage";
+import { ModalPortal } from "./ModalPortal";
 
 interface CertificateModalProps {
   title: string;
@@ -33,8 +34,9 @@ export function CertificateModal({ title, url, onClose }: CertificateModalProps)
   }, [onClose]);
 
   return (
-    <div
-      className="fixed inset-0 z-[100] flex items-end justify-center sm:items-center sm:p-4 md:p-6"
+    <ModalPortal>
+      <div
+        className="fixed inset-0 z-[200] flex items-end justify-center sm:items-center sm:p-4 md:p-6"
       role="dialog"
       aria-modal="true"
       aria-label={title}
@@ -46,7 +48,7 @@ export function CertificateModal({ title, url, onClose }: CertificateModalProps)
         aria-label={t.ui.closeViewer}
       />
 
-      <div className="relative flex max-h-[95dvh] w-full max-w-4xl flex-col overflow-hidden rounded-t-2xl border border-[var(--border)] bg-[var(--surface)] shadow-2xl sm:max-h-[90vh] sm:rounded-2xl">
+      <div className="relative z-10 flex max-h-[95dvh] w-full max-w-4xl flex-col overflow-hidden rounded-t-2xl border border-[var(--border)] bg-[var(--surface)] shadow-2xl sm:max-h-[90vh] sm:rounded-2xl">
         <div className="flex items-center justify-between gap-3 border-b border-[var(--border)] px-4 py-3 sm:px-6">
           <h3 className="min-w-0 flex-1 truncate text-sm font-semibold text-[var(--text-heading)] sm:text-base">
             {title}
@@ -85,5 +87,6 @@ export function CertificateModal({ title, url, onClose }: CertificateModalProps)
         )}
       </div>
     </div>
+    </ModalPortal>
   );
 }

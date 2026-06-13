@@ -31,6 +31,10 @@ export const en: Translations = {
     viewImage: "View image",
     previousImage: "Previous image",
     nextImage: "Next image",
+    galleryHint: "Tap any photo to view it full size",
+    galleryViewerHint: "← → to browse · Esc to close",
+    imageLoading: "Loading image…",
+    imageError: "Could not load this image",
     publishedApps: "Published Apps",
     viewOnPlayStore: "Google Play",
     viewGitHub: "View GitHub Profile",
@@ -177,6 +181,14 @@ export const en: Translations = {
           {
             url: "/projects/iot-water-monitoring/03-presenter-gusto.png",
             caption: "Project demonstration at GUSTO University IoT project show",
+          },
+          {
+            url: "/projects/iot-water-monitoring/12-makerfest-award-american-center.png",
+            caption: "MakerFest Myanmar 2024 award plaque at American Center Yangon",
+          },
+          {
+            url: "/projects/iot-water-monitoring/13-team-american-center-trip.png",
+            caption: "Team photo before competing at the American Center MakerFest event",
           },
           {
             url: "/projects/iot-water-monitoring/04-prototype-breadboard-lcd.png",

@@ -95,6 +95,10 @@ export interface Translations {
     viewImage: string;
     previousImage: string;
     nextImage: string;
+    galleryHint: string;
+    galleryViewerHint: string;
+    imageLoading: string;
+    imageError: string;
     publishedApps: string;
     viewOnPlayStore: string;
     viewGitHub: string;

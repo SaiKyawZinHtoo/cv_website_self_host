@@ -31,6 +31,10 @@ export const my: Translations = {
     viewImage: "ဓာတ်ပုံကြည့်ရန်",
     previousImage: "ယခင်ဓာတ်ပုံ",
     nextImage: "နောက်ဓာတ်ပုံ",
+    galleryHint: "ဓာတ်ပုံကို နှိပ်ပြီး အပြည့်အဝကြည့်ရှုနိုင်ပါသည်",
+    galleryViewerHint: "← → ဖြင့် လှည့်ကြည့်ပါ · Esc ဖြင့် ပိတ်ပါ",
+    imageLoading: "ဓာတ်ပုံ loading လုပ်နေသည်…",
+    imageError: "ဤဓာတ်ပုံကို မဖွင့်နိုင်ပါ",
     publishedApps: "ထုတ်ဝေထားသော Apps",
     viewOnPlayStore: "Google Play",
     viewGitHub: "GitHub Profile ကြည့်ရန်",
@@ -177,6 +181,14 @@ export const my: Translations = {
           {
             url: "/projects/iot-water-monitoring/03-presenter-gusto.png",
             caption: "GUSTO University IoT ပရောဂျက်ပြပွဲတွင် စမ်းသပ်သရုပ်ပြခြင်း",
+          },
+          {
+            url: "/projects/iot-water-monitoring/12-makerfest-award-american-center.png",
+            caption: "American Center Yangon — MakerFest Myanmar 2024 ဆုချီးမြှင့်စဉ်",
+          },
+          {
+            url: "/projects/iot-water-monitoring/13-team-american-center-trip.png",
+            caption: "American Center MakerFest ပြိုင်ပွဲဝင်ရန် အဖွဲ့ဓာတ်ပုံ",
           },
           {
             url: "/projects/iot-water-monitoring/04-prototype-breadboard-lcd.png",
