@@ -41,6 +41,7 @@ export interface AppLink {
   name: string;
   url: string;
   description?: string;
+  platform?: "android" | "ios";
 }
 
 export interface ExperienceItem {
@@ -101,6 +102,7 @@ export interface Translations {
     imageError: string;
     publishedApps: string;
     viewOnPlayStore: string;
+    viewOnAppStore: string;
     viewGitHub: string;
     githubRepos: string;
     lightTheme: string;

@@ -15,8 +15,10 @@ import {
   SiGithubcopilot,
   SiFigma,
   SiGoogle,
+  SiGit,
+  SiGithubactions,
 } from "react-icons/si";
-import { TbServer, TbSparkles } from "react-icons/tb";
+import { TbServer, TbSparkles, TbBoxMultiple, TbLayersLinked } from "react-icons/tb";
 import type { IconType } from "react-icons";
 import type { TechCategoryKey } from "@/i18n/types";
 
@@ -31,6 +33,20 @@ export interface TechItem {
 export const techStackItems: TechItem[] = [
   { name: "Flutter", category: "mobile", color: "#54C5F8", icon: SiFlutter },
   { name: "Dart", category: "mobile", color: "#0175C2", icon: SiDart },
+  {
+    name: "BLoC",
+    category: "mobile",
+    color: "#00589E",
+    icon: TbLayersLinked,
+    note: "State management",
+  },
+  {
+    name: "Provider",
+    category: "mobile",
+    color: "#13B9FD",
+    icon: TbBoxMultiple,
+    note: "State management",
+  },
   { name: "React", category: "frontend", color: "#61DAFB", icon: SiReact },
   { name: "Next.js", category: "frontend", color: "#FFFFFF", icon: SiNextdotjs },
   { name: "JavaScript", category: "frontend", color: "#F7DF1E", icon: SiJavascript },
@@ -40,9 +56,23 @@ export const techStackItems: TechItem[] = [
   { name: "PHP", category: "backend", color: "#777BB4", icon: SiPhp },
   { name: "Docker", category: "devops", color: "#2496ED", icon: SiDocker, note: "VPS production" },
   { name: "VPS", category: "devops", color: "#8B5CF6", icon: TbServer, note: "Z.com hosting" },
+  { name: "Git", category: "devops", color: "#F05032", icon: SiGit },
+  {
+    name: "GitHub Actions",
+    category: "devops",
+    color: "#2088FF",
+    icon: SiGithubactions,
+    note: "Mobile CI/CD",
+  },
   { name: "MongoDB", category: "database", color: "#47A248", icon: SiMongodb },
   { name: "PostgreSQL", category: "database", color: "#4169E1", icon: SiPostgresql },
-  { name: "Firebase", category: "database", color: "#FFCA28", icon: SiFirebase },
+  {
+    name: "Firebase",
+    category: "database",
+    color: "#FFCA28",
+    icon: SiFirebase,
+    note: "Auth, FCM, Realtime DB",
+  },
   { name: "GitHub Copilot", category: "ai", color: "#000000", icon: SiGithubcopilot },
   { name: "Cursor AI", category: "ai", color: "#7C3AED", icon: TbSparkles },
   { name: "Figma", category: "design", color: "#F24E1E", icon: SiFigma },

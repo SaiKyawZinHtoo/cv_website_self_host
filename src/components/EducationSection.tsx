@@ -22,7 +22,10 @@ export function EducationSection() {
         />
         <div className="relative space-y-0">
           {t.cv.education.map((item, index) => (
-            <div key={`${item.period}-${item.title}`} className="relative flex gap-4 pb-8 last:pb-0">
+            <div
+              key={`${item.period}-${item.title}`}
+              className="relative flex gap-4 pb-8 last:pb-0 print:break-inside-avoid"
+            >
               {index < t.cv.education.length - 1 && (
                 <div className="absolute left-[7px] top-3 h-full w-px bg-gradient-to-b from-[var(--accent)]/50 to-transparent" />
               )}

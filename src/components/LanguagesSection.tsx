@@ -19,7 +19,7 @@ export function LanguagesSection() {
         {t.cv.languages.map((lang) => (
           <div
             key={lang.name}
-            className="rounded-xl border border-[var(--border)] bg-[var(--card-inner)] p-4"
+            className="rounded-xl border border-[var(--border)] bg-[var(--card-inner)] p-4 print:break-inside-avoid"
           >
             <div className="mb-3 flex items-center justify-between">
               <span className="font-medium text-[var(--text-heading)]">{lang.name}</span>

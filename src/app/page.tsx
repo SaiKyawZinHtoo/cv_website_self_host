@@ -23,7 +23,7 @@ export default function Home() {
           <div className="space-y-6 sm:space-y-8">
             <Hero />
             <ProfileSection />
-            <div className="grid gap-6 sm:gap-8 lg:grid-cols-2">
+            <div className="print-stack grid gap-6 sm:gap-8 lg:grid-cols-2">
               <EducationSection />
               <div className="space-y-6 sm:space-y-8">
                 <SkillsSection />

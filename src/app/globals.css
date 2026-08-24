@@ -178,8 +178,52 @@ html[data-locale="my"] h4 {
   .print-cv header,
   .print-cv article {
     border-color: #e2e8f0 !important;
+  }
+
+  /* Only avoid breaking small, self-contained blocks (a single job, a single
+     timeline entry, a language card). The outer GlassCard <section>s are too
+     tall to fit one page, so forcing break-inside: avoid on them just pushes
+     the whole block to the next page and leaves a large blank gap. */
+  .print-cv header,
+  .print-cv article {
     break-inside: avoid;
     page-break-inside: avoid;
+  }
+
+  /* Normalize spacing/columns for print so the PDF looks the same regardless
+     of how the browser's print engine computes the viewport width (sm:/md:/
+     lg: breakpoints are viewport-driven and print inconsistently). */
+  .print-cv {
+    padding-bottom: 0 !important;
+  }
+
+  .print-cv [class*="space-y-"] > * + * {
+    margin-top: 1.25rem !important;
+  }
+
+  .print-cv .print-stack {
+    display: block !important;
+  }
+
+  .print-cv .print-stack > * + * {
+    margin-top: 1.25rem;
+  }
+
+  .print-cv section {
+    padding: 1.5rem !important;
+  }
+
+  .print-cv header {
+    padding: 2rem !important;
+  }
+
+  /* Descriptions (app names, tech notes) use `truncate` for the on-screen
+     fixed-width cards, which clips text with an ellipsis. In a PDF there's no
+     hover/tap to see the rest, so let this text wrap fully instead. */
+  .print-cv .truncate {
+    overflow: visible !important;
+    text-overflow: unset !important;
+    white-space: normal !important;
   }
 
   .print-cv img,
